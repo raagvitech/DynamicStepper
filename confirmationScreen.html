@@ -1,0 +1,116 @@
+<template>
+    <div class="box">
+        <div class="heading">
+            <b><h1>Confirmation</h1></b>
+        </div>
+        <div class="table">
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered" style="width: 43%;">
+                <tbody>
+                <tr class="slds-line-height_reset">
+                            <td class="col-1">
+                                <div class="slds-truncate">PRN</div>
+                            </td>
+                            <td class="col-2">
+                                <div class="slds-truncate">2153254863</div>
+                            </td>
+                        </tr>
+                        <tr class="slds-line-height_reset">
+                            <td class="col-1">
+                                <div class="slds-truncate">Case Number</div>
+                            </td>
+                            <td class="col-2">
+                                <div class="slds-truncate">{casefromchilds}</div>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="heading-2">
+            <b><h1>Plan Option Details</h1></b>
+        </div>
+        <div class="sub-table">
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered" style="width: 43%;">
+                <tbody>
+                    <tr class="slds-line-height_reset">
+                        <td class="col-1">
+                            <div class="slds-truncate">Offer ID</div>
+                        </td>
+                        <td class="col-2">
+                            <div class="slds-truncate">1234567</div>
+                        </td>
+                    </tr>
+                        <tr class="slds-line-height_reset">
+                            <td class="col-1">
+                                <div class="slds-truncate">Installment Amount</div>
+                            </td>
+                            <td class="col-2">
+                                <div class="slds-truncate">{selectedmockvalues.ppInstalmentAmount}</div>
+                            </td>
+                        </tr>
+                        <tr class="slds-line-height_reset">
+                            <td class="col-1">
+                                <div class="slds-truncate">Frequency</div>
+                            </td>
+                            <td class="col-2">
+                                <div class="slds-truncate">{selectedmockvalues.ppFrequency}</div>
+                            </td>
+                        </tr>
+                        <tr class="slds-line-height_reset">
+                        <td class="col-1">
+                            <div class="slds-truncate">No of Installments</div>
+                        </td>
+                        <td class="col-2">
+                            <div class="slds-truncate">{selectedmockvalues.ppNumOfInstallments}</div>
+                        </td>
+                    </tr>
+                    <tr class="slds-line-height_reset">
+                    <td class="col-1">
+                        <div class="slds-truncate">First Installment Date</div>
+                    </td>
+                    <td class="col-2">
+                        <div class="slds-truncate">{selectedmockvalues.validToDate}</div>
+                    </td>
+                </tr>
+                
+            <tr class="slds-line-height_reset">
+            <td class="col-1">
+                <div class="slds-truncate">Total Amount Payable</div>
+            </td>
+            <td class="col-2">
+                <div class="slds-truncate">{selectedmockvalues.totalPayableAmount}</div>
+            </td>
+        </tr>
+        <tr class="slds-line-height_reset">
+        <td class="col-1">
+            <div class="slds-truncate">Payment Method</div>
+        </td>
+        <td class="col-2">
+            <div class="slds-truncate">VISA***1234</div>
+        </td>
+    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="heading-3">
+            <b><h1>Direct Debit Agreement</h1></b>
+        </div>
+        <div class="message">
+            <div class="msg-heading">
+                <h1><b>Read to the Customer</b></h1>
+            </div>
+                <div class="slds-grid">
+                    <div class="icon">
+                        <lightning-icon class="slds-icon" icon-name='standard:snippet' alternative-text='snippet' size='large' title='snippet'></lightning-icon>
+                    </div>
+                    <div id="variants" class="slds-p-vertical_x-small slds-grid">
+                        <p style="padding-left: 19px;">Do you request and authorise Telstra(debit user ID 545383 and 084159) to arrange through its own financial institution a debit to the <br/>
+                        nominated card or account each month for the cost of this service and other services you already have with telstra, or that you late take<br/>
+                        up with Telstra, for which direct debit is or becomes the required preffered payment method.In proceeding, you acknowledge that you<br/>
+                        understand this debit will be made through the Bulk Electronic clearing System(BECS) and is subject to the terms and conditions of the<br/>
+                        Direct Debit Request Service Agreement.
+                        </p>
+                        </div>
+                </div>
+        </div>
+    </div>
+    </template>

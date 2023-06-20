@@ -1,0 +1,51 @@
+<template>
+    <lightning-card>
+        <div class="slds-m-left_x-small ">
+            <lightning-button label="Agent Payment Flow" onclick={openRetryPaymentComponent} variant="brand"></lightning-button>
+        </div>
+        <template if:true={PaymentModal}>
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closePopup}>
+                            <lightning-icon icon-name="utility:close"
+                                alternative-text="close"
+                                variant="inverse"
+                                size="small" ></lightning-icon>
+                        </button>
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Retry Payment</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                       
+                    </div>
+                    <div class="slds-modal__content">
+                        <div class="cust-box">
+                            <p><b>What does the customer want to do?</b></p>
+                        
+                         <div class="radio1">
+                           <lightning-input data-name="pan1" type="radio" label="Pay now" value="payNow" name="payNow" checked={paynowradio} onchange={handleRadioButton}></lightning-input>
+                           <p>Retry failed payment subscriptions, sale orders and add ons</p>
+                            </div>
+                         <div class="radio2">
+                            <lightning-input data-name="pan1" type="radio" label="Pay later" value="payLater" name="payLater" checked={paylaterradio} onchange={handleRadioButton}></lightning-input>
+                            <P>Subscription ONLY - Schedule a new date for failed payments</P>
+                         </div>
+                         <p if:true={showError} class="showError">Select an option</p>
+                        </div>
+                      
+                    </div>
+                   
+
+                    <!-- Modal/Popup Box LWC footer starts here -->
+                    <footer class="slds-modal__footer">
+                        
+                        <button class="slds-button slds-button_brand" onclick={handleNext} title="Next">Next</button>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+           
+        </template>
+
+    </lightning-card>
+</template>

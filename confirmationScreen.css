@@ -1,0 +1,42 @@
+.box{
+    padding-top: 25px;
+}
+.table{
+    padding-top: 20px;
+}
+.heading-2{
+    padding-top: 30px;
+}
+.sub-table{
+    padding-top: 20px;
+}
+.col-1{
+    width: 219px;
+    height: 13px;
+    padding: 8px;
+}
+.heading-3{
+    padding-top: 30px;
+}
+.message{
+    height: 185px;
+    background-color:  rgb(243, 243, 243);
+}
+.msg-heading{
+    padding-left: 61px;
+    padding-top: 15px;
+}
+.icon{
+    padding-left: 10px;
+ 
+}
+.slds-icon{
+    width: var(--lwc-squareIconMediumBoundary,4rem);
+    height: var(--lwc-squareIconMediumBoundary,4rem);
+    --lwc-colorTextIconInverse:blue;
+    --sds-c-icon-color-background:rgb(243, 243, 243);
+}
+.content{
+    padding-left: 30px;
+    padding-top: 15px;
+}

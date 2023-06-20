@@ -1,0 +1,46 @@
+.custom-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    width:965px;
+    height:60px;
+
+}
+
+.step-number {
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    border:1px solid #b5b8ba;
+    color:#b5b8ba;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6px;
+}
+
+.step-label {
+    margin-left: 10px;
+    font-size: 12px;
+    padding-top: 3px;
+}
+.line {
+    width:30px;
+    border: 1.5px solid #c9c9c9;
+    margin-top: 13px;
+    justify-content: center;
+    height: 1px;
+}
+.after-line{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.hideline{
+    display: none;
+}
+.stepColor{
+    background-color: #0176d3;
+}

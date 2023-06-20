@@ -1,0 +1,132 @@
+<template>
+  
+    <div class="heading">
+        <b><p>Select Plan Option</p></b>
+    </div>
+    <div class="table">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered " style="border:1px solid black">
+            <thead>
+                <tr class="slds-line-height_reset">
+                        <th class="col-1" scope="col">
+                            <div class="slds-truncate" title="Installment Amount">Installment Amount</div> 
+                        </th>
+                        <th class="col-2" scope="col">
+                            <div class="slds-truncate" title="Frequency">Frequency</div>
+                        </th>
+                        <th class="col-3" scope="col">
+                            <div class="slds-truncate" title="No. Of Installment">No. Of Installment</div>
+                         </th>
+                         <th class="col-4" scope="col">
+                            <div class="slds-grid">
+                                <div class="slds-truncate" title="Total Amount Payble">Total Amount Payble</div>
+                                    <div class="info-icon">
+                                               <lightning-icon icon-name='utility:info_alt' alternative-text='info_alt' variant='success' size='x-small' onmouseover={displayinfomessage} onmouseleave={removemessage}></lightning-icon>
+                                                <section if:true={displayinformation} aria-describedby="dialog-body-id-110" aria-labelledby="dialog-heading-id-2"
+                                                    class="slds-popover slds-popover  slds-is-absolute popover slds-nubbin_top-right" role="dialog">
+                                                    <div id="popover-body-id" class="slds-popover__body">
+                                                        <P>Total Amount Payble is an estimate<br/>
+                                                            which is based on the customer's last three bills.<br/>
+                                                            If there's no previous bills,we'll base <br/>
+                                                            it on data from similar customer's demographic.<br/>
+                                                            By including estimated usage up until <br/>
+                                                            the payment planends, <br/>
+                                                            customer won't have another bill <br/>
+                                                            to pay soon after.<br/>
+                                                        </p>
+                                                    </div>
+                                                </section>
+                                    </div>
+                                </div>
+                            </th>
+                         <th class="col-5" scope="col">
+                            <div class="slds-truncate" title="Expiry Date">Expiry Date</div>
+                         </th>
+                </tr>
+                <tr class="slds-line-height_reset">
+                    <th scope="col">
+                        <div class="row" title="Tier 1 - General Agent">Tier 1 - General Agent</div>
+                    </th>
+                    <th scope="col">
+                        <div class="row"></div>
+                    </th>
+                    <th scope="col">
+                        <div class="row"></div>
+                    </th>
+                    <th scope="col">
+                        <div class="row"></div>
+                    </th>
+                    <th scope="col">
+                        <div class="row"></div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={selectrecord} for:item="item">
+                    <tr key={item.ppOfferId}>
+                        <td>
+                            <div class="slds-grid">
+                                <div class="radio-button">
+                                    <lightning-input type="radio" data-name="ra1" name="contactradio" onchange={handleChange}  value={item.ppOfferId} checked={radioval}></lightning-input>
+                                </div>
+                                <div class="data">
+                                    {item.ppInstalmentAmount}
+                                </div>
+                            </div>   
+                        </td>
+                        
+                        <td>
+                            {item.ppFrequency}
+                        </td>
+                        <td>
+                            {item.ppNumOfInstallments}
+                        </td>
+                        <td>
+                            {item.totalPayableAmount}
+                        </td>
+                        <td>
+                            {item.validToDate}
+                        </td>
+                      </tr>
+                </template>
+            </tbody>
+        </table>
+        <template if:true={optionserror}>
+            <p class="optionserror">Select an option</p>
+        </template>
+    </div>
+   
+        <div class="info-message">
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col">
+                    <span>
+                        <div class="box1">
+                            <lightning-icon class="slds-icon" icon-name="utility:info" alternative-text="Info!" variant="info"
+                            title="info variant small" size="small"></lightning-icon>
+                        </div>
+                    </span>
+                </div>
+                <div class="slds-col">
+                    <span>
+                        <div class="box2">
+                            <p>Please escalate to Team Lead/Store Manager or SAT Team if customer is looking for more options</p>
+                        </div>
+                    </span>
+                </div>
+            </div>  
+        </div>
+    
+    <div class="date">
+        <div class="headline">
+            <h1><b>Choose Start Date</b></h1>
+        </div>
+        <div class="input-box">
+                <lightning-input type="date" label="Select When customer wants their first payment to be made" onchange={handleDateChange} value={firstdate} data-id="dateError"></lightning-input>
+                <template if:true={calendarerror}>
+                    <p class="date-error">Select a date</p>
+                </template>
+        </div>
+        
+    </div>
+  
+    
+</template>

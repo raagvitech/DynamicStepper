@@ -1,0 +1,19 @@
+<template>
+  <div class="custom-box">
+    <lightning-layout>
+        <template for:each={steps} for:item="item" for:index="index">
+            <lightning-layout-item  key={item.label} >
+                        <div class="step-number" data-id={item.value}>{item.value}</div>
+                </lightning-layout-item>
+                <lightning-layout-item key={item.label}>
+                    <div class="step-label">{item.label}</div>
+                </lightning-layout-item>
+                
+                    <lightning-layout-item key ={item.label} class="after-line">
+                       <div data-id="li" class="line"></div>
+                        
+                    </lightning-layout-item>
+        </template>
+</lightning-layout>
+</div>
+</template>

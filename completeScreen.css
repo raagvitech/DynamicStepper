@@ -1,0 +1,43 @@
+.info-message{
+    width: 942px;
+    height: 66px;
+    background-color: #f3f7fd;
+}
+.box1{
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-right: 2px;
+    padding-left: 35px;
+    margin-right: -140px;
+    --lwc-colorTextIconDefault: blue;
+}
+.box2{
+    padding-top: 26px;
+    padding-bottom: 26px;
+    padding-right: 10px;
+    width: 700px;
+    height: 20px;
+    margin-right: 120px;
+}
+.skipbox{
+    background-color: rgb(236 246 255);
+    display: flex;
+    margin-top: 2px;
+    height: 50px;
+}
+.skipbox1{
+    padding-top: 12.5px;
+    padding-left: 12px;
+    --lwc-colorTextIconDefault: blue;
+}
+.skipbox2{
+    padding-top: 16px;
+    padding-left: 16px;
+    display: grid;
+}
+.technicalerrorbox{
+    background-color: rgb(231, 193, 193);
+    display: flex;
+    margin-top: 2px;
+    height: 50px; 
+}

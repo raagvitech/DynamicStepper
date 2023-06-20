@@ -1,0 +1,87 @@
+.box{
+    width: 1245px;
+    height: 1000px;
+   background-color:rgb(255, 255, 255);
+   
+   padding-top: 30px;
+   display: flex;
+}
+.insidebox{
+    width: 990px;
+    margin: 0 auto;
+    align-items: center;
+    padding-left: 80px;
+    padding-top: 50px;
+}
+
+.heading{
+    width: 265px;
+    height: 50px;
+    padding-top: 10px;
+
+}
+.container{
+    display: flex;
+   
+    background-color:rgb(255, 255, 255);
+}
+
+.slds-grid{ 
+    display: flex;
+    justify-content: space-between;
+    
+}
+.backbutton{
+    padding-right: 634px;
+}
+/* .nextbutton{
+    padding-left: 321px;
+} */
+.skipbutton{
+    padding-right: 40px;
+}
+.heading h1{ 
+    color: #181818;
+    font-size: 24px;
+    font-weight: 700;
+  }
+.stepColor {
+    background-color: blue;
+    
+  }
+  .showError{
+    color: red;
+  }
+  .slds-modal__content{
+    width: 942px;
+    
+}
+.info-message{
+    width: 942px;
+    height: 66px;
+    background-color: #fdf6f4;
+}
+.slds-icon{
+    --lwc-colorTextIconDefault :#0c0101;
+}
+.box1{
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-right: 2px;
+    margin-right: -140px;
+}
+.box2{
+    padding-top: 26px;
+    padding-bottom: 26px;
+    padding-right: 10px;
+    width: 502px;
+    height: 20px;
+}
+.slds-col span .box1{
+    padding-left: 70px;
+}
+.slds-col span .box2{
+    padding-left: 0px;
+    width: 592px;
+    margin-left: -150px;
+}

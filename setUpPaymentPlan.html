@@ -1,0 +1,103 @@
+<template>
+    <div class="box">
+        <div class="insidebox">
+            <div class="heading">
+                <b>
+                    <h1>Set Up Payment Plan</h1>
+                </b>
+            </div>
+            <div class="container">
+                <c-dynamic-stepper-component steps={steps}
+                    currentstepindex={currentstepindex}></c-dynamic-stepper-component>
+            </div>
+            <template if:true={headerline}>
+                <div style="border-bottom: 1px solid rgb(230, 211, 211)"></div>
+            </template>
+            <div class="steps">
+                <template if:true={authorization}>
+                    <template if:true={stepOne}>
+                        <c-select-contact steps={steps} currentstepindex={currentstepindex} stepindex={index}
+                            record={recordId} onhandlecontactradiobutton={handlecontactradiobutton}
+                            oncasedata={casedata} onhandlecasenumber={handlecasenumber}
+                            accountauthority={accountauthority} contacterror={contacterror}
+                            casenumbererror={casenumbererror} selectedbutton={selectedbutton}
+                            displayfirstcase={firstCase} radiochecks={radiocheck}
+                            selectedcontact={selectContact}></c-select-contact>
+                    </template>
+                </template>
+                <template if:true={accountauthority}>
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <div class="info-message">
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col">
+                                    <span>
+                                        <div class="box1">
+                                            <lightning-icon class="slds-icon" icon-name='utility:ban'
+                                                alternative-text='ban' variant='error' size='small'
+                                                title='ban'></lightning-icon>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="slds-col">
+                                    <span>
+                                        <div class="box2">
+                                            <p>Full authority is not authorised to perform this action</p>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+                <template if:true={stepTwo}>
+                    <c-select-plan-option-and-date steps={steps} currentstepindex={currentstepindex} stepindex={index}
+                        onhandlemockdata={handlemockdata} onhandledate={handledate} selectrecord={calloutData}
+                        optionserror={optionserror} firstdate={selecteddate} calendarerror={calendarerror}
+                        mockvalues={mockvalue}>
+                    </c-select-plan-option-and-date>
+                </template>
+                <template if:true={stepThree}>
+                    <c-confirmation-screen casefromchilds={casefromchild} selectedmockvalues={selectedmockvalue}>
+                    </c-confirmation-screen>
+                </template>
+                <template if:true={stepFour}>
+                    <c-complete-screen skipupnowscreen={skipupnow} successmessages={successmessage}
+                        saveforlatermessages={saveforlatermessage} technicalerrored={technicalerror}>
+                    </c-complete-screen>
+                </template>
+                <template if:true={footerline}>
+                    <div style="border-bottom: 1px solid rgb(230, 211, 211);padding-top:100px"></div>
+                </template>
+                <div class="footer">
+                    <footer class="slds-grid">
+                        <div class="backbutton">
+                            <template if:true={previous}>
+                                <lightning-button variant="neutral" label="Back"
+                                    onclick={handleBack}></lightning-button>
+                            </template>
+                        </div>
+                        <div class="skipbutton">
+                            <template if:true={skipbutton}>
+                                <lightning-button variant="neutral" label="Skip for now"
+                                    onclick={handleSkip}></lightning-button>
+                            </template>
+                            <template if:true={Saveforlater}>
+                                <lightning-button variant="neutral" label="Save for Later"
+                                    onclick={handlesaveforlater}></lightning-button>
+                            </template>
+                        </div>
+                        <div class="nextbutton">
+                            <template if:true={nextStep}>
+                                <lightning-button variant="brand" label="Next" onclick={handleNext}></lightning-button>
+                            </template>
+                            <template if:true={Setupnowbutton}>
+                                <lightning-button variant="brand" label="Set Up Now"
+                                    onclick={handleSetup}></lightning-button>
+                            </template>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,54 @@
+<template>
+    <div class="box">
+        <div class="insidebox">
+            <template if:true={caseNumbers}>
+                <lightning-input class="stepOne" onchange={handleCaseNumber} label="Case ID" value={displayfirstcase} data-id="caseError"></lightning-input>
+            </template>
+            <template if:true={casenumbererror}>
+                <p class="showError">Select a valid Case number</p>
+            </template>
+        </div>
+        <div class="heading">
+            <b><p>Select Contact</p></b>
+        </div>
+        <div class="table">
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered " >
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th class="" scope="col">
+                            <div class="slds-truncate">
+                                
+                            </div>
+                        </th>
+                        <th class="col-1" scope="col">
+                            <div class="slds-truncate" title="Contact">Contact</div>
+                        </th>
+                            <th class="col-2" scope="col">
+                            <div class="slds-truncate" title="Account Authority">AccountAuthority</div>
+                            </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={selectedcontact} for:item="select">
+                        <tr key={select.Id}>
+                            <td>
+                                <lightning-input type="radio" data-id="ds1" name="contact" class="radio" value={select.Authority_Type__c} onchange={getSelectedContacts} checked={radioButton}></lightning-input>
+                            </td>
+                            <td class="row-1">
+                                {select.Name}
+                            </td>
+                            
+                            <td class="row-2">
+                                {select.Authority_Type__c}
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+            <template if:true={contacterror}>
+                <p class="errorMessage">Select a contact</p>
+            </template>    
+        </div>
+    </div>
+    
+</template>

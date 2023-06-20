@@ -1,0 +1,48 @@
+<template>
+    <template if:true={successmessages}>
+        <div class="skipbox">
+            <div class="skipbox1">
+                <lightning-icon icon-name='utility:success' alternative-text='success' variant='success' size='small'
+                    title='success'></lightning-icon>
+            </div>
+            <div class="skipbox2">
+                <h1>Request successfully submitted</h1>
+            </div>
+        </div>
+    </template>
+    <template if:true={skipupnowscreen}>
+        <div class="skipbox">
+            <div class="skipbox1">
+                <lightning-icon icon-name='utility:info' alternative-text='success' size='small'></lightning-icon>
+            </div>
+            <div class="skipbox2">
+                <h1>This payment plan option is saved and will be valid for 2 days</h1>
+            </div>
+        </div>
+    </template>
+    <template if:true={saveforlatermessages}>
+        <div class="skipbox">
+            <div class="skipbox1">
+                <lightning-icon icon-name='utility:info' alternative-text='success' size='small'></lightning-icon>
+            </div>
+            <div class="skipbox2">
+                <h1>This payment plan option is saved and will be valid until 08/08/2023</h1>
+            </div>
+        </div>
+    </template>
+    <template if:true={technicalerrored}>
+        <div class="technicalerrorbox">
+            <div class="skipbox1">
+                <lightning-icon class="slds-icon" icon-name='utility:ban' alternative-text='ban' variant='error' size='small' title='ban'></lightning-icon>            </div>
+            <div class="skipbox2">
+                <div class="errorbox" style="height: 1px;">
+                <b><h1>Generic technical error</h1></br></b>
+                </div>
+         
+            <div class="skipbox3">
+                <h>please retry or try again later</h>
+            </div>
+        </div>
+        </div>
+    </template>
+</template>
